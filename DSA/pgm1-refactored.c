@@ -2,6 +2,65 @@
 
 
 
+#include<stdio.h>
+#include<stdlib.h>
+
+char str[100], pat[50], rep[50], ans[100];  // Declare strings: main string (str), pattern (pat), replace (rep), and the answer/result (ans)
+int i, j, c, m, k, flag = 0;  // Declare integers for indexing and flag to indicate if pattern was found
+
+// Function to perform pattern matching and replacement using brute force
+void stringmatch()
+{
+    i = m = c = j = 0;  // Initialize all indexes to 0
+    while (str[c] != '\0')  // Loop until the end of the main string is reached
+    {
+        if (str[m] == pat[i])  // If characters in main string and pattern match
+        {
+            i++;  // Increment pattern index
+            m++;  // Increment main string index
+
+            if (pat[i] == '\0')  // If the entire pattern is matched
+            {
+                flag = 1;  // Set flag to indicate pattern was found
+
+                // Replace the pattern with the replacement string
+                for (k = 0; rep[k] != '\0'; k++, j++)
+                    ans[j] = rep[k];  // Copy the replacement string to the answer
+
+                i = 0;  // Reset pattern index to 0
+                c = m;  // Move the main string index past the replaced portion
+            }
+        }
+        else  // If characters do not match
+        {
+            ans[j] = str[c];  // Copy the current character of the main string to the answer
+            j++;  // Move to the next position in the answer
+            c++;  // Increment the main string index
+            m = c;  // Reset m to start comparing again from the next character
+            i = 0;  // Reset pattern index to 0
+        }
+    }
+    ans[j] = '\0';  // Terminate the answer string with a null character
+}
+
+void main()
+{
+    printf("Enter a main string \n");
+    gets(str);  // Read the main string (str)
+
+    printf("Enter a pattern string \n");
+    gets(pat);  // Read the pattern string (pat)
+
+    printf("Enter a replace string \n");
+    gets(rep);  // Read the replacement string (rep)
+
+    stringmatch();  // Call the string matching function
+
+    if (flag == 1)  // If pattern was found
+        printf("The resultant string is\n %s", ans);  // Print the resultant string with replacements
+    else  // If pattern was not found
+        printf("Pattern string NOT found\n");  // Print message indicating pattern was not found
+}
 
 
 
