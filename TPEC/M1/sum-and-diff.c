@@ -4,8 +4,9 @@
 #include <stdlib.h>
 
 int main()
-{   int a,b;
-	scanf("%d %d",&a,&b);
+{   //add from here 
+    int a,b;
+    scanf("%d %d",&a,&b);
     int sum = a+b;
     int diff = a-b;
     float a1,b1;
@@ -17,6 +18,6 @@ int main()
     printf("%d %d\n",sum,diff);
      printf("%.1f %.1f \n",sum1,diff1);
     
-    
+    //till here
     return 0;
 }
