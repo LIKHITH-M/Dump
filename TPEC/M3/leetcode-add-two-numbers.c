@@ -6,6 +6,7 @@
  * };
  */
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
+    //from here
     int carry = 0;
     struct ListNode head;
     struct ListNode* cur = &head;
@@ -31,4 +32,4 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
     }
     
     return head.next;
-}
+}//till here
