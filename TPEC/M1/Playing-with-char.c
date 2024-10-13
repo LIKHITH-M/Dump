@@ -4,7 +4,8 @@
 #include <stdlib.h>
 
 int main() 
-{ char ch;
+{ //add from here
+  char ch;
   char s[100];
   char sen[100];
   
@@ -15,6 +16,6 @@ scanf("%[^\n]%*sen", sen);
 printf("%c\n", ch);
 printf("%s\n", s);
 printf("%s\n",sen);
-  
+   //till here
     return 0;
 }
