@@ -31,6 +31,7 @@ jobs:
       run: |
         git config --local user.email "your-email@example.com"
         git config --local user.name "Your Name"
+        git stash # Stash any unstaged changes
         git pull origin main --rebase  # Pull latest changes
         git add programs.pdf
         git commit -m "Update PDF with latest C programs" || echo "No changes to commit"
