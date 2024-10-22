@@ -19,6 +19,12 @@ jobs:
     - name: Set execute permissions
       run: chmod +x generate_pdf.sh
 
+    - name: Remove old PDF
+      run: |
+        if [ -f programs.pdf ]; then
+          rm programs.pdf
+        fi
+
     - name: Generate PDF
       run: |
         find ./TPEC/M1 ./TPEC/M2 ./TPEC/M3 -name '*.c' | xargs enscript -p output.ps
