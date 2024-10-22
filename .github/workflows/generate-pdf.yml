@@ -1,6 +1,5 @@
 name: Generate PDF from C Programs
 
-# Trigger the workflow on any push to the repository
 on:
   push:
     branches:
@@ -11,19 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Check out the repository
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # Install the required packages (enscript and ghostscript)
     - name: Install dependencies
       run: sudo apt-get install -y enscript ghostscript
 
-    # Run the script to generate the PDF
+    - name: Set execute permissions
+      run: chmod +x generate_pdf.sh
+
     - name: Generate PDF
       run: ./generate_pdf.sh
 
-    # Commit and push the generated PDF back to the repository
     - name: Commit and push PDF
       run: |
         git config --local user.email "your-email@example.com"
