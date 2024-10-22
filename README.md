@@ -1,5 +1,10 @@
 # College-dump
-## Pdf Generation enabled for ./TPEC
-It saves a lot of time ! 
 
+## Description
+- It saves a lot of time !
+## Features
+
+- Pdf Generation enabled for ./TPEC
+
+## Note:
 Ignore /CTF
