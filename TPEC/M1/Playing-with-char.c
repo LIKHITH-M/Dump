@@ -1,10 +1,25 @@
+/* Task
+
+You have to print the character ch, in the first line. Then print s in next line. In the last line print sen in the sentence.
+
+Input Format:
+First, take a character,
+as input.
+Then take the string, as input.
+Lastly, take the sentence as input.
+
+Output Format:
+Print three lines of output. The first line prints the character,ch.
+The second line prints the string,s .
+The third line prints the sentence,sen .
+*/
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
 
 int main() 
-{ //add from here
+{ // from here
   char ch;
   char s[100];
   char sen[100];
