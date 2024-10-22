@@ -27,7 +27,7 @@ jobs:
 
     - name: Generate PDF
       run: |
-        find ./TPEC/M1 ./TPEC/M2 ./TPEC/M3 -name '*.c' | xargs enscript -p output.ps
+        find ./TPEC/M1 ./TPEC/M2 ./TPEC/M3 -name '*.c' -exec enscript {} -o - \; > output.ps
         ps2pdf output.ps programs.pdf
         rm output.ps
 
