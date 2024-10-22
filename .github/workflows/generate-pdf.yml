@@ -20,12 +20,17 @@ jobs:
       run: chmod +x generate_pdf.sh
 
     - name: Generate PDF
-      run: ./generate_pdf.sh
+      run: |
+        find ./TPEC/M1 ./TPEC/M2 ./TPEC/M3 -name '*.c' | xargs enscript -p output.ps
+        ps2pdf output.ps programs.pdf
+        rm output.ps
 
     - name: Commit and push PDF
+      env:
+        GITHUB_TOKEN: ${{ secrets.pdf_runner }}
       run: |
         git config --local user.email "your-email@example.com"
         git config --local user.name "Your Name"
         git add programs.pdf
         git commit -m "Update PDF with latest C programs"
-        git push
+        git push https://x-access-token:${GITHUB_TOKEN}@github.com/Anorak001/Dump.git HEAD:main
