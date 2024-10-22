@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,6 +31,7 @@ jobs:
       run: |
         git config --local user.email "your-email@example.com"
         git config --local user.name "Your Name"
+        git pull origin main --rebase  # Pull latest changes
         git add programs.pdf
-        git commit -m "Update PDF with latest C programs"
+        git commit -m "Update PDF with latest C programs" || echo "No changes to commit"
         git push https://x-access-token:${GITHUB_TOKEN}@github.com/Anorak001/Dump.git HEAD:main
