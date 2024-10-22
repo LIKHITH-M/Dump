@@ -5,6 +5,7 @@ In computer science, you could prove it formally with a loop invariant, where yo
     Maintenance: If it's true before an iteration of a loop, it remains true before the next iteration.
     Termination: It will terminate in a useful way once it is finished.
 
+
 Challenge
 In the InsertionSort code below, there is an error. Can you fix it? Print the array only once, when it is fully sorted.
 
