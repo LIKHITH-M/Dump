@@ -8,5 +8,3 @@
 - [Download the PDF](https://raw.githubusercontent.com/Anorak001/Dump/main/programs.pdf)
 
 
-## Note:
-Ignore /CTF
